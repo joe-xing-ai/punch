@@ -1,14 +1,14 @@
 
 ## Project Punch
 
-Punch is an User - Item Embedding Based Recommendation Engine with the primary focus being proactively explore and
+Punch is an User-item Embedding Based Recommendation Engine with the primary focus being proactively explore and
 exploit the Most Relevant Content for user community.
 
 #### Author: joe.xing.ai@gmail.com
 
 ### Design
 
-The main idea behind this Learning framework is to 
+The main idea behind this learning framework is to 
 
 #### The Model Architecture:
 
@@ -21,10 +21,9 @@ torch 1.7.1
 
     - conda env create --file environment_ubuntu.yaml (environment_windows.yml)
 
-For now we only support Ubuntu and Windows 10 OS
+For now we only support Ubuntu and Windows 10 OS.
 
-    - conda activate gadget
-    - cd ./python/ && python main.py --download --dataset_name "food01" --image_folder "./data/food01"
+    - conda activate punch
 
 These initialization procedures will start to download Tensorflow standard datasets.
 

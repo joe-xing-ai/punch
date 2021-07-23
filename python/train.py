@@ -5,16 +5,13 @@ from utility.get_data import UcfData
 import tensorflow as tf
 import numpy as np
 from model import VideoModel
-from data import config as cfg
-
-slim = tf.contrib.slim
 
 
 class MultiTrainer(object):
 
     def __init__(self, model, data1):
 
-        self.batch_size = cfg.train_batch_size
+        self.batch_size = 64
         self.model = model
         self.data1 = data1
         self.num_gpus = 1
@@ -139,7 +136,7 @@ class MultiTrainer(object):
 
 def main():
     net = VideoModel(True)
-    data1 = ucf_data('train')
+    data1 = UcfData('train')
     # data2 = ucf_data('test')
     model = MultiTrainer(net, data1)
     model.train()

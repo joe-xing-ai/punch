@@ -2,10 +2,6 @@ import os
 # os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import tensorflow as tf
 import numpy as np
-from data import config as cfg
-from tensorflow.contrib import layers
-
-slim = tf.contrib.slim
 
 
 class VideoModel(object):
@@ -13,8 +9,8 @@ class VideoModel(object):
     def __init__(self, training):
 
         self.training = training
-        self.batch_size = cfg.train_batch_size if self.training else cfg.test_batch_size
-        self.kernel_regu = layers.l2_regularizer(0.001)
+        self.batch_size = 64 if self.training else 1
+        self.kernel_regu = tf.keras.regularizers.L2(0.001)
 
     def youtube_network(self, history, example_age, num_classes, labels=None):
         item_embedding = tf.get_variable('age_embedding', [num_classes, 24],
